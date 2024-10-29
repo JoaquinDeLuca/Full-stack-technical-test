@@ -1,5 +1,3 @@
-# Full Stack Technical Test
-
 ## Requisitos
 
 - Python 3.7 o superior
