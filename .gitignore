@@ -1,0 +1,7 @@
+# Ignorar el archivo de configuración de la base de datos
+.env
+
+# Ignorar carpetas específicas
+/Frontend/node_modules/
+/Backend/env/
+/Backend/app/__pycache__/
