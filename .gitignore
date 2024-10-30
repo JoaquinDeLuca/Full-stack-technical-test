@@ -6,4 +6,5 @@
 /Backend/env/
 /Backend/app/__pycache__/
 /Backend/app/models/__pycache__/
-/Backend/app/routers/__pycache__/
+/Backend/app/schemas/__pycache__/
+/Backend/app/routes/__pycache__/
