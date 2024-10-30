@@ -2,7 +2,11 @@
 
 ## Descripción
 
-Este proyecto es una API RESTful: permite gestionar productos y usuarios. La API incluye funcionalidades para crear, leer, actualizar y eliminar (CRUD) registros de productos y usuarios.
+Este proyecto es una API RESTful que permite gestionar productos y usuarios. La API incluye funcionalidades para crear, leer, actualizar y eliminar (CRUD) registros de productos y usuarios. Al iniciar la aplicación, se crean automáticamente las tablas necesarias en la base de datos y se cargan dos registros por defecto en cada una.
+
+- ##Tablas creadas exitosamente.
+- ##Registros de usuarios por defecto insertados exitosamente.
+- ##Registros de productos por defecto insertados exitosamente.
 
 ### Funcionalidades
 
@@ -44,10 +48,12 @@ Para ejecutar el backend de la aplicación, sigue estos pasos:
    ```bash
    env/Scripts/activate
    ```
-4. **Asegúrate de instalar las librerías:**
+4. **Instala las Dependencias Necesarias:**
+
+   Ejecuta el siguiente comando para instalar las librerías requeridas:
 
    ```bash
-   pip install -r requirements.txt
+   pip install fastapi uvicorn sqlalchemy pymysql python-dotenv
    ```
 
 5. **Crea un archivo .env**  
