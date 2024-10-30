@@ -15,14 +15,24 @@ def get_all_users(db: db_dependency):
     except Exception as e: 
         raise HTTPException(status_code=500, detail=str(e))
     
-@users.post("/", response_model=UserResponse, status_code=201)
+@users.post("/", response_model=dict, status_code=201)
 def create_user(user: UserCreate, db: db_dependency):
     try:
         db_user = User(**user.model_dump())
         db.add(db_user)
         db.commit()
         db.refresh(db_user) 
-        return db_user  
+
+        # Convertimos el producto creado a un formato serializable con ProductResponse
+        serialized_user = UserResponse.model_validate(db_user).model_dump()
+
+        response = {
+            "data": serialized_user,
+            "status_code": 201,
+            "error": False
+        }
+
+        return response
     except IntegrityError as e:
         db.rollback()
         # Comprobar si el error es de clave única en el correo electrónico

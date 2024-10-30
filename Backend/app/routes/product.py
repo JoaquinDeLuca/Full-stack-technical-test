@@ -15,14 +15,23 @@ def get_products(db: db_dependency):
     except Exception as e: 
         raise HTTPException(status_code=500, detail=str(e))
 
-@products.post("/", response_model=ProductResponse, status_code=201)
+@products.post("/", response_model=dict, status_code=201)
 def create_product(product: ProductCreate, db: db_dependency):
     try:
         db_product = Product(**product.model_dump()) 
         db.add(db_product) 
         db.commit()  
         db.refresh(db_product)  # Actualizo el objeto con datos del DB
-        return db_product  # Devuelvo el producto creado
+
+        serialized_product = ProductResponse.model_validate(db_product).model_dump()
+
+        response = {
+            "data": serialized_product,
+            "status_code": 201,
+            "error": False
+        }
+
+        return response 
     except SQLAlchemyError as e:
         db.rollback() 
         raise HTTPException(status_code=400, detail=f"No se pudo crear, Intenten nuevamente {e}") 
