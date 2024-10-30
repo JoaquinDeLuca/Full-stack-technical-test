@@ -9,9 +9,25 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-:root {
-    --primary: #FCFCFC;
-    --max-width: 20rem;
+body {
+    background-color: #FCFCFC;
 }
 
+.content{
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #e5e7eb; 
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #475569 ; 
+}
 
