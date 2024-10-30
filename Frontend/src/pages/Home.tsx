@@ -122,7 +122,9 @@ export default function Home() {
                   <td className="py-3 px-6">{item.email}</td>
                   <td className="py-3 px-6 text-center space-y-2">
                     <button
-                      onClick={() => navigate(`/user/${item.id}/edit`)}
+                      onClick={() => toast.warning("Editar usuarios", {
+                        description: "¡Próximamente estará disponible!"
+                      })}
                       className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 mr-2 transition duration-200 ease-in"
                     >
                       Editar
@@ -138,7 +140,7 @@ export default function Home() {
               ))
                 : (
                   <tr>
-                    <td colSpan={4} className='text-center'>
+                    <td colSpan={4} className='text-center p-4'>
                       <p className='text-sm'>No hay usuarios registrados todavía.</p>
                     </td>
                   </tr>
@@ -190,7 +192,9 @@ export default function Home() {
                   <td className="py-3 px-6">{item.price}</td>
                   <td className="py-3 px-6 text-center space-y-2">
                     <button
-                      onClick={() => navigate(`/product/${item.id}/edit`)}
+                      onClick={() => toast.warning("Editar productos", {
+                        description: "¡Próximamente estará disponible!"
+                      })}
                       className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-200 ease-in mr-2"
                     >
                       Editar
@@ -205,7 +209,7 @@ export default function Home() {
                 </tr>
               )) : (
                 <tr>
-                  <td colSpan={4} className='text-center'>
+                  <td colSpan={5} className='text-center p-4'>
                     <p className='text-sm'>No hay productos registrados todavía.</p>
                   </td>
                 </tr>
