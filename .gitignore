@@ -5,3 +5,5 @@
 /Frontend/node_modules/
 /Backend/env/
 /Backend/app/__pycache__/
+/Backend/app/models/__pycache__/
+/Backend/app/routers/__pycache__/
