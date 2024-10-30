@@ -1,11 +1,65 @@
+# Backend FastAPI
+
+## Descripción
+
+Este proyecto es una API RESTful: permite gestionar productos y usuarios. La API incluye funcionalidades para crear, leer, actualizar y eliminar (CRUD) registros de productos y usuarios.
+
+### Funcionalidades
+
+- **Gestión de Productos**
+  - Crear, obtener, actualizar y eliminar productos.
+- **Gestión de Usuarios**
+  - Crear, obtener, actualizar usuarios y eliminar usuarios.
+
 ## Requisitos
 
-- Python 3.7 o superior
-- MySQL
+Para ejecutar este proyecto, asegúrate de tener instalados los siguientes requisitos:
 
-## Instalación
+- Python 3.8 o superior
+- pip (gestor de paquetes de Python)
+- Un servidor de base de datos (MySQL)
 
-1. Clona este repositorio:
+## Instrucciones para Ejecutar el Backend
+
+Para ejecutar el backend de la aplicación, sigue estos pasos:
+
+1. **Posiciónate en la Carpeta del Proyecto**  
+   Abre una terminal y navega a la carpeta del proyecto usando el siguiente comando:
+
    ```bash
-   git clone https://github.com/JoaquinDeLuca/Full-stack-technical-test.git
+   cd Backend
+   ```
+
+2. **Crear un Entorno Virtual:**
+
+   crea un entorno virtual con el siguiente comando:
+
+   ```bash
+   python -m venv env
+   ```
+
+3. **Activar el entorno virtual**  
+   Para activar el entorno virtual, utiliza el siguiente comando:
+   Windows:
+   ```bash
+   env/Scripts/activate
+   ```
+4. **Asegúrate de instalar las librerías:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Crea un archivo .env**  
+   Copia el archivo de ejemplo .env.example y renómbralo a .env. Luego, ajusta los valores según tu configuración.
+
+   ```bash
+   DATABASE_URL=mysql+pymysql://user:password@localhost/dbname
+   FRONTEND_URL=http://localhost:5173/ ## Default url vite
+   ```
+
+6. **Ejecución del Proyecto**  
+   Para ejecutar la API, utiliza el siguiente comando:
+   ```bash
+    uvicorn app.main:app --reload  --port 8001
    ```
