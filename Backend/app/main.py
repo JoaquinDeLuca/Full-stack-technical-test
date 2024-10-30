@@ -15,5 +15,5 @@ def read_root():
     return {"message": "Welcome to the API"}
 
 # Rutas 
-app.include_router(products)
-app.include_router(users)
+app.include_router(products, prefix="/api/products")
+app.include_router(users, prefix="/api/users")
